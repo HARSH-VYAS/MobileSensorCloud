@@ -1,0 +1,52 @@
+<div ng-init="getSensorInfo()">
+	<div class="container-fluid">
+		<div class="span8 panel panel-primary">
+			<div class="panel-heading">Sensor Information</div>
+			<div class="panel-body">
+		      <table ng-table="tableParams" show-filter="true" class="table">
+		        <tr ng-repeat="sensor in $data">      
+		          <td data-title="'Sensor ID'" sortable="'sensorId'" filter="{ 'sensorId': 'text' }">
+		          	<input type="checkbox" checklist-model="sensoridlist" checklist-value="sensor.sensorId">
+		            {{sensor.sensorId}}
+		          </td>
+		       	  <td data-title="'Sensor Name'" sortable="'sensorname'" filter="{ 'sensorname': 'text' }">
+		            {{sensor.sensorname}}
+		          </td>
+    		      <td data-title="'Sensor Type'" sortable="'sensorType'" filter="{ 'sensorType': 'text' }">
+		            {{sensor.sensorType}}
+		          </td>
+		          <td data-title="'Sensor State'" sortable="'sensorstate'" filter="{ 'sensorstate': 'text' }">
+		            {{sensor.sensorstate}}
+		          </td>
+   		          <td data-title="'Manage Sensor'">
+   		          	<div class="btn-group" role="group">
+					    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					      Manage
+					      <span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu">
+					      <li><a href="#" ng-click="manageSensor(sensor.sensorId,'Start')">Start</a></li>
+					      <li><a href="#" ng-click="manageSensor(sensor.sensorId,'Stop')">Stop</a></li>
+					      <li><a href="#" ng-click="manageSensor(sensor.sensorId,'Terminate')">Terminate</a></li>
+					    </ul>
+				    </div>
+		          </td>
+		        </tr>
+		      </table>
+			</div>
+			<div style="margin-left: 50px; margin-bottom: 50px;">
+				<button ng-click="getSensorData()" class="btn btn-primary">Get Sensor Data</button>
+				<button ng-click="checkAll()" class="btn btn-primary">Check All</button>
+				<button ng-click="createSensor()" class="btn btn-primary">Request New Sensor</button>
+			</div>
+		</div>
+		<div class="row"></div>
+			<div class="span8 panel panel-primary col-lg-6" ng-repeat="gsensor in sensorgraph" style="padding: 10px;">
+				<div class="panel-heading">{{gsensor.series[0]}}</div>
+				<div class="panel-body">
+					<canvas id="line" class="chart chart-line" chart-data="gsensor.data" chart-labels="gsensor.labels" chart-legend="true" chart-series="gsensor.series" chart-click="onClick" ></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

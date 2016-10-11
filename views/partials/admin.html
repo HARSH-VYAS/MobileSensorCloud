@@ -1,0 +1,48 @@
+    <div ng-init="changeTemplateURL('templates/instanceInfo.html')">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                </button>
+                <a class="navbar-brand" href="home.html">Mobile Sensor</a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li ng-click="Logout()"><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-header -->
+	            <div class="navbar-default sidebar" role="navigation">
+	                <div class="sidebar-nav navbar-collapse">
+	                    <ul class="nav" id="side-menu">
+	                        <li ng-click="changeTemplateURL('templates/instanceInfo.html')">
+	                            <a><i class="fa fa-dashboard fa-fw"></i> Instance Info</a>
+	                        </li>
+	                        <li ng-click="changeTemplateURL('templates/userInfo.html')">
+	                            <a><i class="fa fa-bar-chart-o fa-fw"></i> User Info</a>
+	                        </li>                     
+	                    </ul>
+	                </div>
+	                <!-- /.sidebar-collapse -->
+	            </div>
+	            <!-- /.navbar-static-side -->
+	        </nav>
+				<!-- Page Content -->
+		<div id="page-content-wrapper" style="margin-left: 15%;margin-top: 2%;">
+			<div class="container-fluid">
+				<div ng-include="templateurl"></div>
+			</div>
+			<!-- /#page-content-wrapper -->
+
+		</div>
+</div>

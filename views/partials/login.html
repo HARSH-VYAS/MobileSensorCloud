@@ -1,0 +1,38 @@
+<div class="container bg">
+ 	<div class="row" style="margin-top: 4%;">
+		<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+	 						<div class="page-header">
+							<h3>Login</h3>
+				</div>
+				<form role="form" action="Login" method="post">
+							<div class="form-group">
+	 								<label for="Username">Email or Username</label>
+	 								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+									<input type="email" ng-model="user_email" name="Username" class="form-control"  placeholder="Enter email">
+						</div>
+							</div>
+							<div class="form-group" >
+	 								<label for="password">Password</label>
+	 								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+									<input type="password" ng-model="user_password" name="Password" class="form-control" placeholder="Password">
+									
+									</div>
+						</div>
+							<hr/>
+							<button type="submit" ng-click="Login()" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+						<p><br/></p>	
+							<p> Not a member? <a href="#" ng-click="signUp()">Register Here</a></p>
+				<p><br/></p>
+				</form>
+				
+					</div>
+		</div>
+			</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>

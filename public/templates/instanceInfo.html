@@ -1,0 +1,53 @@
+<div ng-init="getInstanceInfo()">
+	<div class="container-fluid">
+		<div class="span8 panel panel-primary">
+			<div class="panel-heading">Instance Information</div>
+			<div class="panel-body">
+		      <table ng-table="tableParams" show-filter="true" class="table">
+		        <tr ng-repeat="instances in $data">      
+		          <td data-title="'Host Name'" sortable="'host_name'" filter="{ 'host_name': 'text' }">
+		            {{instances.host_name}}
+		          </td>
+		          <td data-title="'Internet State'" sortable="'internet_state'" filter="{ 'internet_state': 'text' }">
+		            {{instances.internet_state}}
+		          </td>
+		          <td data-title="'Internal IP'" sortable="'Internal_IP'" filter="{ 'Internal_IP': 'text' }">
+		            {{instances.Internal_IP}}
+		          </td>
+		          <td data-title="'External IP'" sortable="'External_IP'" filter="{ 'External_IP': 'text' }">
+		            {{instances.External_IP}}
+		          </td>
+		          <td data-title="'CUP Utilization'" sortable="'cpu_utilization'" filter="{ 'cpu_utilization': 'text' }">
+		            {{instances.cpu_utilization}}
+		          </td>
+		          <td data-title="'Disk Used'" sortable="'disk_used'" filter="{ 'disk_used': 'text' }">
+		            {{instances.disk_used}}
+		          </td>		          
+		          <td data-title="'Disk Free'" sortable="'disk_free'" filter="{ 'disk_free': 'text' }">
+		            {{instances.disk_free}}
+		          </td>
+		          <td data-title="'Ram Used'" sortable="'ram_used'" filter="{ 'ram_used': 'text' }">
+		            {{instances.ram_used}}
+		          </td>		          
+		          <td data-title="'Ram Free'" sortable="'ram_free'" filter="{ 'ram_free': 'text' }">
+		            {{instances.ram_free}}
+		          </td>		          
+		          <td data-title="'System Up Time'" sortable="'sys_up_time'" filter="{ 'sys_up_time': 'text' }">
+		            {{instances.sys_up_time}}
+		          </td>
+		          <td data-title="'Load Average'" sortable="'load_avg'" filter="{ 'load_avg': 'text' }">
+		            {{instances.load_avg}}
+		          </td>
+		          <td data-title="'CPU Utilization'" sortable="'cpu_utilization'" filter="{ 'cpu_utilization': 'text' }">
+		            {{instances.cpu_utilization}}
+		          </td>		                   	          		          		          		          		          		          		          
+		        </tr>
+		      </table>
+			</div>
+			<div style="margin-left: 50px; margin-bottom: 50px;">
+				<button ng-click="createController()" class="btn btn-primary">New Controller</button>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

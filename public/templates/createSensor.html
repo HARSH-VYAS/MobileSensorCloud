@@ -1,0 +1,29 @@
+<div>
+	<div class="modal-header" style="background-color: #337ab7;">
+		<h3 class="modal-title">New Sensor</h3>
+	</div>
+	<div class="modal-body" style="margin-left: 2%;margin-top: 2%;">
+		<form class="row">
+		  <div class="form-group col-lg-6">
+		  	<h4>Sensor Name <input type="text" ng-model="sensor_name" class="form-control" placeholder="Sensor Name"></h4>	    
+		  </div>
+          <div class="btn-group col-lg-6" role="group">
+          		<h4>Sensor Type</h4>
+			    <button type="button" style="margin-top: -2%;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			      {{sensor_type}}
+			      <span class="caret"></span>
+			    </button>
+			    <ul class="dropdown-menu">
+			      <li><a href="#" ng-click="setSensorType('Temperature')">Temperature</a></li>
+			      <li><a href="#" ng-click="setSensorType('Humidity')">Humidity</a></li>
+			      <li><a href="#" ng-click="setSensorType('Accelerometer')">Accelerometer</a></li>
+			    </ul>
+		    </div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<!-- <div class="pull-left text-danger">{{formError}}</div> -->
+		<button class="btn btn-primary" ng-click="ok()">Create Sensor</button>
+		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

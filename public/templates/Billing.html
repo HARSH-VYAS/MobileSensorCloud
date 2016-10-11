@@ -1,0 +1,37 @@
+<div id="page-wrapper" style="margin-left: -2%;" ng-init="getBillingInfo()">
+	<div class="container-fluid">
+      	<div class="row">
+	        <div class="col-lg-12">
+	            <h1 class="page-header">
+	                Monthly Bill
+	                <small>Summary</small>
+	            </h1>	             
+	        </div>
+	    </div>
+	    <div>
+	    	<table ng-table="tableParams" show-filter="true" class="table">
+	        	<tr ng-repeat="sensor_info in $data">      
+		          <td style="text-align: center;" data-title="'Sensor Name'" sortable="'sensorName'" filter="{ 'sensorName': 'text' }">
+		            {{sensor_info.sensorName}}
+		          </td>
+    		      <td style="text-align: center;" data-title="'Sensor Type'" sortable="'sensorType'" filter="{ 'sensorType': 'text' }">
+		            {{sensor_info.sensorType}}
+		          </td>
+		          <td style="text-align: center;" data-title="'Sensor Price'" sortable="'sensorprice'" filter="{ 'sensorprice': 'text' }">
+		            {{sensor_info.sensorprice}}
+		          </td>
+		          <td style="text-align: center;" data-title="'Usage'" sortable="'usagecount'" filter="{ 'usagecount': 'text' }">
+		            {{sensor_info.usagecount}}
+		          </td>
+		          <td style="text-align: center;" data-title="'Sensor Charge'">
+		            {{sensor_info.usagecount * sensor_info.sensorprice}}
+		          </td>
+		        </tr>
+	      	</table>		          
+	    </div>
+	    <div class="row">
+	    	<h1 style="text-align: left;" class="col-lg-8 page-header"> Total Amount</h1>
+	    	<h1 style="text-align: right;" class="col-lg-4"> {{total_bill}}$</h1>
+	    </div>
+	</div>
+</div>
